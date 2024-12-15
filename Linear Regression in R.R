@@ -1,0 +1,13 @@
+set.seed(1)
+x=sample(1:10,5,replace=T)
+x
+e=rnorm(5)
+e
+y=2*x+1+e
+y
+plot(x,y,xlim=c(-0.5,10.5),ylim=c(-0.5,21))
+abline(1,2)
+model=lm(y~x)
+summary(model)
+p=predict(model,as.data.frame(x))
+rbind(y,p)
